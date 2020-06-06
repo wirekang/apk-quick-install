@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">APKQI</string>
+    <string name="preference_category_connection">Connection</string>
+    <string name="preference_title_run">Run Service</string>
+    <string name="preference_summary_run">Run service</string>
+    <string name="preference_title_host">Server Address</string>
+    <string name="preference_title_port">Port</string>
+    <string name="preference_category_support">Support</string>
+    <string name="preference_title_github">Github</string>
+    <string name="preference_summary_github">Github</string>
+    <string name="notification_title_offline">Not connected</string>
+    <string name="notification_text_offline">APKQI can`t connect to %s</string>
+    <string name="notification_title_wait">Waiting</string>
+    <string name="notification_text_wait">APKQI is waiting for the server to send file.</string>
+    <string name="notification_title_download">Downloading</string>
+    <string name="notification_text_download">%d%% downloaded</string>
+    <string name="toast_connect">APKQI: Connected</string>
+    <string name="toast_disconnect">APKQI: Disconnected</string>
+    <string name="toast_start">APKQI: Downloading..</string>
+    <string name="toast_end">APKQI: Downloaded</string>
 </resources>
