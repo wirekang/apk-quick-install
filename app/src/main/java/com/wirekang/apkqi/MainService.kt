@@ -119,6 +119,12 @@ class MainService : Service(), ClientListener {
         )
     }
 
+    override fun onPortError() {
+    }
+
+    override fun onHostError() {
+    }
+
     override fun onConnect() {
         setContentWait()
         toastHandler.sendEmptyMessage(MSG_CONNECT)
