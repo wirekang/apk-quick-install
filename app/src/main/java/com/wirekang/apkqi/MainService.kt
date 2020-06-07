@@ -57,7 +57,7 @@ class MainService : Service(), ClientListener {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         startForeground(123, builder.build())
         setContentOffline()
-        Client.connect()
+        Client.start()
         isRunning = true
 
         return START_STICKY

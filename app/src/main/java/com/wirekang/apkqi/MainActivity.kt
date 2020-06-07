@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(),
 
     private fun setHost(sp: SharedPreferences) {
         Client.host = sp.getString("host", "")
-        Client.port = sp.getString("port", "")!!.toInt()
+        Client.port = sp.getString("port", "5123")!!.toInt()
     }
 
     private fun setFragment() {
