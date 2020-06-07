@@ -96,17 +96,8 @@ object Client {
         listener?.onFile(offset + bytes.size)
         if (offset + bytes.size == fileSize) {
             FileManager.end()
-            sendEnd()
             listener?.onFileEnd()
         }
-    }
-
-    private fun sendEnd() {
-        val event = "file end"
-        output.writeShort(event.length)
-        output.write(event.toByteArray(Charset.forName("utf-8")))
-        output.writeLong(fileSize)
-        output.flush()
     }
 
     private fun onDisconnect() {
