@@ -54,7 +54,7 @@ object Client {
 
     private fun listen() {
         while (isConnected) {
-            val length = input.readUnsignedShort()
+            val length = input.readShort().toInt()
             val byteArray = ByteArray(length)
             input.read(byteArray, 0, length)
             onEvent(byteArray.toString(Charset.forName("utf-8")).trim())
