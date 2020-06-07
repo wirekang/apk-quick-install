@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity(),
                 startService(serviceIntent)
             }
         } else {
-            MainService.isStopping = true
             stopService(serviceIntent)
 
         }

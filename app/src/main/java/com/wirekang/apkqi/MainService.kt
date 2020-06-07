@@ -20,7 +20,6 @@ const val MSG_DISCONNECT = 4
 class MainService : Service(), ClientListener {
     companion object {
         var isRunning = false
-        var isStopping = false
     }
 
     private lateinit var builder: Notification.Builder
@@ -131,8 +130,6 @@ class MainService : Service(), ClientListener {
     }
 
     override fun onDisconnect() {
-        if (isStopping)
-            return
         setContentOffline()
         toastHandler.sendEmptyMessage(MSG_DISCONNECT)
     }
