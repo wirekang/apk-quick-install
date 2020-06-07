@@ -75,7 +75,7 @@ class MainService : Service(), ClientListener {
     private fun createChannel(id: String, name: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
-                id, name, NotificationManager.IMPORTANCE_DEFAULT
+                id, name, NotificationManager.IMPORTANCE_NONE
             )
             channel.enableVibration(false)
             channel.enableLights(false)
