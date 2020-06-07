@@ -16,6 +16,7 @@ const val MSG_START = 1
 const val MSG_END = 2
 const val MSG_CONNECT = 3
 const val MSG_DISCONNECT = 4
+const val MSG_ERROR = 5
 
 class MainService : Service(), ClientListener {
     companion object {
@@ -38,6 +39,8 @@ class MainService : Service(), ClientListener {
                     Toast.makeText(context, R.string.toast_connect, Toast.LENGTH_LONG).show()
                 MSG_DISCONNECT ->
                     Toast.makeText(context, R.string.toast_disconnect, Toast.LENGTH_LONG).show()
+                MSG_ERROR ->
+                    Toast.makeText(context, R.string.toast_error, Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -110,6 +113,13 @@ class MainService : Service(), ClientListener {
         )
     }
 
+    private fun setContentError() {
+        setContent(
+            resources.getString(R.string.notification_title_error),
+            resources.getString(R.string.notification_text_error)
+        )
+    }
+
     private fun setContentOffline() {
         setContent(
             resources.getString(R.string.notification_title_offline),
@@ -119,9 +129,13 @@ class MainService : Service(), ClientListener {
     }
 
     override fun onPortError() {
+        setContentError()
+        toastHandler.sendEmptyMessage(MSG_ERROR)
     }
 
     override fun onHostError() {
+        setContentError()
+        toastHandler.sendEmptyMessage(MSG_ERROR)
     }
 
     override fun onConnect() {
