@@ -3,6 +3,8 @@
 ## APK Quick Install
 이것은 PC에서 특정 경로의 apk파일의 생성 또는 변화를 감지하여 안드로이드 장치로 전송, 설치 요청을 해 주는 서비스입니다. 한 마디로 Android Studio에서 apk파일을 build함과 동시에 핸드폰 화면에 <strong>"설치하시겠습니까?"</strong>를 띄워줍니다.
 
+![ver1](https://user-images.githubusercontent.com/43294688/84043995-eef52380-a9e1-11ea-86c6-f4886ef96a9e.gif)
+
 ### 왜 필요한가
 이 서비스는 대부분의 상황에서 불필요하지만 다음과 같은 제약이 있는 환경에서는 유용합니다.
 
