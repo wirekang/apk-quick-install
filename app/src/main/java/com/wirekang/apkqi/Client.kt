@@ -96,6 +96,8 @@ object Client {
             wroteByte=0
             FileManager.end()
             listener?.onFileEnd()
+            socket.close()
+            connect()
         }
     }
 
