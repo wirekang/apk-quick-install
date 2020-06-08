@@ -147,6 +147,8 @@ class MainService : Service(), ClientListener {
     }
 
     override fun onDisconnect() {
+        if(!isRunning)
+            return
         setContentOffline()
         toastHandler.sendEmptyMessage(MSG_DISCONNECT)
     }
