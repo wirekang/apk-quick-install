@@ -3,13 +3,14 @@ package com.wirekang.apkqi
 import android.content.Context
 import android.util.Log
 import java.io.File
-import java.io.RandomAccessFile
+import java.io.FileOutputStream
 
 object FileManager {
     lateinit var file: File
-    private lateinit var raf: RandomAccessFile
 
-    var size: Long = 0
+    private lateinit var out: FileOutputStream
+    private var fileSize: Long = 0
+
     var context: Context? = null
         set(value) {
             field = value
@@ -18,23 +19,20 @@ object FileManager {
                 file.delete()
         }
 
-
     fun start(size: Long) {
-        this.size = size
+        this.fileSize = size
         if (file.exists())
             file.delete()
-        raf = RandomAccessFile(file, "rw")
+        out = FileOutputStream(file)
     }
 
-    fun write(offset: Long, bytes: ByteArray) {
-        if (offset % 8 == 0L)
-            log("${(offset / size.toDouble() * 100).toInt()}%")
-        raf.seek(offset)
-        raf.write(bytes)
+    fun write(bytes: ByteArray) {
+        out.write(bytes,0,bytes.size)
     }
 
     fun end() {
-        raf.close()
+        out.flush()
+        out.close()
     }
 
     private fun log(str: String) {

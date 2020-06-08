@@ -15,12 +15,13 @@ object Client {
     var port: Int = 0
     var listener: ClientListener? = null
 
-    lateinit var socket: Socket
-    private var fileSize = 0L
-    private var isConnected = false
+    private lateinit var socket: Socket
     private lateinit var input: DataInputStream
     private lateinit var output: DataOutputStream
     private lateinit var job: Job
+    private var fileSize = 0L
+    private var wroteByte = 0L
+    private var isConnected = false
 
     fun start() {
         job = GlobalScope.launch(Dispatchers.IO) {
@@ -61,40 +62,38 @@ object Client {
         }
     }
 
-    private fun onEvent(e: String) {
-        val event =
-            if (e.length > 20) {
-                e.substring(0, 20)
-            } else {
-                e
-            }
+    private fun onEvent(event: String) {
         log("event: $event")
         when (event) {
             "file start" -> {
-                fileSize = input.readLong()
-                onFileStart()
+                onFileStart(input.readLong())
             }
             "file" -> {
-                val offset = input.readLong()
-                val size = input.readShort().toInt()
-                val bytes = ByteArray(size)
-                input.read(bytes, 0, size)
-                onFile(offset, bytes)
+                val bytes = ByteArray(DEFAULT_BUFFER_SIZE)
+                var read: Int
+                do {
+                    read = input.read(bytes, 0, DEFAULT_BUFFER_SIZE)
+                    onFile(bytes.sliceArray(0 until read))
+                } while (read > 0)
             }
         }
     }
 
-    private fun onFileStart() {
+    private fun onFileStart(size:Long) {
+        fileSize=size
+        wroteByte=0
         log("size: $fileSize")
         FileManager.start(fileSize)
         listener?.onFileStart(fileSize)
     }
 
-    private fun onFile(offset: Long, bytes: ByteArray) {
-        log("offset: $offset size: ${bytes.size}")
-        FileManager.write(offset, bytes)
-        listener?.onFile(offset + bytes.size)
-        if (offset + bytes.size == fileSize) {
+    private fun onFile(bytes: ByteArray) {
+        wroteByte += bytes.size
+        log("write ${bytes.size}bytes total:$wroteByte / $fileSize")
+        FileManager.write(bytes)
+        listener?.onFile(wroteByte)
+        if (wroteByte == fileSize) {
+            wroteByte=0
             FileManager.end()
             listener?.onFileEnd()
         }

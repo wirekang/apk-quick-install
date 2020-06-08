@@ -75,12 +75,15 @@ class MainService : Service(), ClientListener {
     private fun createChannel(id: String, name: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
-                id, name, NotificationManager.IMPORTANCE_LOW
+                id, name, NotificationManager.IMPORTANCE_DEFAULT
             )
-            channel.enableVibration(false)
+            channel.enableVibration(true)
+            channel.vibrationPattern=null
             channel.enableLights(false)
+            channel.setSound(null,null)
             notificationManager =
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.deleteNotificationChannel(id)
             notificationManager.createNotificationChannel(channel)
         }
     }
