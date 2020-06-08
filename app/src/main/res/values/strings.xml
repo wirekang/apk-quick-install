@@ -21,6 +21,5 @@
     <string name="toast_connect">APKQI: Connected</string>
     <string name="toast_disconnect">APKQI: Disconnected</string>
     <string name="toast_start">APKQI: Downloading..</string>
-    <string name="toast_end">APKQI: Downloaded</string>
     <string name="toast_error">APKQI: Error</string>
 </resources>

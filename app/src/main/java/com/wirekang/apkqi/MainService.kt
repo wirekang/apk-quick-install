@@ -13,7 +13,6 @@ import androidx.core.content.FileProvider
 const val CHANNEL_ID = "apkquickinstall"
 const val CHANNEL_NAME = "APK Quick Install"
 const val MSG_START = 1
-const val MSG_END = 2
 const val MSG_CONNECT = 3
 const val MSG_DISCONNECT = 4
 const val MSG_ERROR = 5
@@ -33,8 +32,6 @@ class MainService : Service(), ClientListener {
             when (msg.what) {
                 MSG_START ->
                     Toast.makeText(context, R.string.toast_start, Toast.LENGTH_LONG).show()
-                MSG_END ->
-                    Toast.makeText(context, R.string.toast_end, Toast.LENGTH_LONG).show()
                 MSG_CONNECT ->
                     Toast.makeText(context, R.string.toast_connect, Toast.LENGTH_LONG).show()
                 MSG_DISCONNECT ->
@@ -165,7 +162,6 @@ class MainService : Service(), ClientListener {
     }
 
     override fun onFileEnd() {
-        toastHandler.sendEmptyMessage(MSG_END)
         openFile()
         Thread.sleep(1000)
         setContentWait()
