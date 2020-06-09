@@ -30,9 +30,12 @@ object Client {
                     connect()
                 } catch (e: UnknownHostException) {
                     listener?.onHostError()
+                    tryClose()
                 } catch (e: IllegalArgumentException) {
                     listener?.onPortError()
+                    tryClose()
                 } catch (e: SocketException) {
+                    tryClose()
                 } catch (e: ConnectException) {
                 } catch (e: java.lang.Exception) {
                     e.printStackTrace()
