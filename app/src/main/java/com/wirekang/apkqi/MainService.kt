@@ -98,7 +98,7 @@ class MainService : Service(), ClientListener {
         } else {
             Notification.Builder(applicationContext)
         }
-        return builder.setSmallIcon(R.mipmap.ic_launcher).setContentIntent(pendingIntent)
+        return builder.setSmallIcon(R.drawable.ic_stat_notification).setContentIntent(pendingIntent)
     }
 
     private fun setContent(title: String, text: String) {
