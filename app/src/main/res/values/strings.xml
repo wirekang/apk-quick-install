@@ -2,12 +2,12 @@
     <string name="app_name">APKQI</string>
     <string name="preference_category_connection">Connection</string>
     <string name="preference_title_run">Run Service</string>
-    <string name="preference_summary_run">Run service</string>
+    <string name="preference_summary_run">Run service and try to connect to server.</string>
     <string name="preference_title_host">Server Address</string>
     <string name="preference_title_port">Port</string>
     <string name="preference_category_support">Support</string>
     <string name="preference_title_github">Github</string>
-    <string name="preference_summary_github">Github</string>
+    <string name="preference_summary_github">Open github repository.</string>
 
     <string name="notification_title_offline">Not connected</string>
     <string name="notification_text_offline">Can`t connect to %s</string>
@@ -16,7 +16,7 @@
     <string name="notification_title_download">Downloading</string>
     <string name="notification_text_download">%d%% complete</string>
     <string name="notification_title_error">Error</string>
-    <string name="notification_text_error">Something is wrong with host or port</string>
+    <string name="notification_text_error">Something is wrong with server address or port</string>
 
     <string name="toast_connect">APKQI: Connected</string>
     <string name="toast_disconnect">APKQI: Disconnected</string>
