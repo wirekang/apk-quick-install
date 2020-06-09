@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">APKQI</string>
+    <string name="preference_category_connection">연결</string>
+    <string name="preference_title_run">서비스 실행</string>
+    <string name="preference_summary_run">서비스를 실행하고 서버에 연결을 시도합니다.</string>
+    <string name="preference_title_host">서버 주소</string>
+    <string name="preference_title_port">포트</string>
+    <string name="preference_category_support">지원</string>
+    <string name="preference_title_github">Github</string>
+    <string name="preference_summary_github">github저장소를 엽니다.</string>
+
+    <string name="notification_title_offline">연결 안됨</string>
+    <string name="notification_text_offline">%s에 연결할 수 없습니다.</string>
+    <string name="notification_title_wait">기다리는중</string>
+    <string name="notification_text_wait">서버가 파일을 보내주기를 기다리고 있습니다.</string>
+    <string name="notification_title_download">다운로드중</string>
+    <string name="notification_text_download">%d%% 완료됨</string>
+    <string name="notification_title_error">오류</string>
+    <string name="notification_text_error">서버 주소 또는 포트에 문제가 있습니다.</string>
+
+    <string name="toast_connect">APKQI: 연결됨</string>
+    <string name="toast_disconnect">APKQI: 연결 해제됨</string>
+    <string name="toast_start">APKQI: 다운로드중..</string>
+    <string name="toast_error">APKQI: 오류</string>
+</resources>
