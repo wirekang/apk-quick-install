@@ -2,4 +2,4 @@ English |  <a href="README.ko.md">한국어</a>
 
 ## APK Quick Install
 
-![fin](https://user-images.githubusercontent.com/43294688/84273672-e891b380-ab69-11ea-95c4-32c1a873b528.gif)
+![fin](https://user-images.githubusercontent.com/43294688/84275058-92be0b00-ab6b-11ea-91ec-10b020ed0fb4.gif)
