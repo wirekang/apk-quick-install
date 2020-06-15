@@ -16,7 +16,7 @@ USB와 에뮬레이터 사용이 불가능 하다면 남은 방법은 단 하나
 ### 다운로드 및 사용법
  _이 어플리케이션을 사용하기에 앞서 PC에서 서버가 실행되고 있어야 합니다. 자세한 것은 <a href="https://github.com/wirekang/apk-quick-install-server">APKQI 서버</a>를 확인하시기 바랍니다._ 
  
-1. <a href="https://google.com">구글 플레이에서 어플리케이션을 다운로드합니다.</a>
+1. <a href="https://play.google.com/store/apps/details?id=com.wirekang.apkqi">구글 플레이에서 어플리케이션을 다운로드합니다.</a>
 2. 안드로이드 장치에서 어플리케이션을 실행시킵니다.
 3. 서버의 ip주소와 포트를 입력합니다.
 4. 서비스를 실행시킵니다.
