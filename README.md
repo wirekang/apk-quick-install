@@ -16,7 +16,7 @@ There is only one way left in this situation. Whenever you need to run your app,
 ### Usage
  _Before you use this application, The server must be running on your PC. More information: <a href="https://github.com/wirekang/apk-quick-install-server">APKQI Server</a>_ 
  
-1. <a href="https://google.com">Download android app from Google Play Store</a>.
+1. <a href="https://play.google.com/store/apps/details?id=com.wirekang.apkqi">Download android app from Google Play Store</a>.
 2. Start application on your android device.
 3. Eneter IP Address of your computer and port
 4. Run Service.
