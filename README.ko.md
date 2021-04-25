@@ -1,7 +1,7 @@
 <a href="README.md">English</a> |  한국어
 
 ## APK Quick Install
-이것은 PC에서 특정 경로의 apk파일의 생성 또는 변화를 감지하여 안드로이드 장치로 전송, 설치 요청을 해 주는 서비스입니다. 한 마디로 Android Studio에서 apk파일을 build함과 동시에 핸드폰 화면에 <strong>"설치하시겠습니까?"</strong>를 띄워줍니다.
+이것은 PC에서 특정 경로의 apk파일의 생성 또는 변화를 감지하여 안드로이드 장치로 전송, 설치 요청을 해 주는 서비스입니다. Android Studio에서 apk파일을 build함과 동시에 핸드폰 화면에 <strong>"설치하시겠습니까?"</strong>를 띄워줍니다.
 
 ![fin ko](https://user-images.githubusercontent.com/43294688/84275060-93ef3800-ab6b-11ea-9a54-531a9cd2311f.gif)
 
